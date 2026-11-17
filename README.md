@@ -2,6 +2,8 @@
 
 Web de **Webs Esteban González** — páginas web para negocios con agente IA en WhatsApp.
 
+Estilo inspirado en la estructura de Moahu.com.ar (héroe negro a pantalla completa, cabecera flotante en píldora, secciones claras con esquinas redondeadas, titulares enormes, tarjetas de planes y sección "Hazlo tuyo"), adaptado con nuestro tema, textos y precios de webs. Sin copiar su marca, productos ni contenido.
+
 ## Planes (MXN)
 
 - **Básica — $5,900 inicial + $1,290/mes**
