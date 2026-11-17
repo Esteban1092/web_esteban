@@ -2,7 +2,7 @@
 
 Web de **Webs Esteban González** — páginas web para negocios con agente IA en WhatsApp.
 
-Estilo inspirado en la estructura de Moahu.com.ar (héroe negro a pantalla completa, cabecera flotante en píldora, secciones claras con esquinas redondeadas, titulares enormes, tarjetas de planes y sección "Hazlo tuyo"), adaptado con nuestro tema, textos y precios de webs. Sin copiar su marca, productos ni contenido.
+Estilo actual (2026-11-17 17:53): inspirado en la web FINO de Magui.dev (reel Ddp3tEbJz01, "webs con aura"): héroe crema con título gigante condensado, sticker amarillo, bocadillo, damero morado, tarjeta de menú con los planes como lista con precios a la derecha, y Scott y Ramona en pixel art (scott-pixel.webp, el avatar actual de Esteban) como personaje, con corazones pixel morado/teal. Solo estructura/estilo, sin copiar la marca FINO ni sus productos.
 
 ## Planes (MXN)
 
