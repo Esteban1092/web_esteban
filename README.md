@@ -2,7 +2,7 @@
 
 Web de **Webs Esteban González** — páginas web para negocios con agente IA en WhatsApp.
 
-Estilo actual (2026-11-17 18:42): FINO animado + formal como NewApe: héroe crema con WEBS gigante, sticker, bocadillo y marquee, estructura formal (servicios, "Tu turno", paquetes como tarjeta de menú, cómo trabaja el agente, FAQ, CTA final). Solo Scott en pixel art (scott-solo.webp, recortado de su avatar, sin Ramona), haciendo gestos en ciclo: saluda, señala los precios y baila; al pasar el mouse baila.
+Estilo actual (2026-11-17 19:03): FINO animado + formal como NewApe, con más Scott: sección "Scott, en 3 momentos" con sus 3 expresiones (scott-nervioso.jpg sin web, scott-riendo.jpg con agente IA, scott-paz.jpg ya vendiendo), además del Scott pixel solo en el héroe haciendo gestos en ciclo.
 
 ## Planes (MXN)
 
