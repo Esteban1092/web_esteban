@@ -2,7 +2,7 @@
 
 Web de **Webs Esteban González** — páginas web para negocios con agente IA en WhatsApp.
 
-Estilo actual (2026-11-17 18:24): se volvió al estilo FINO animado, pero con mejores colores sacados de la imagen de Scott y Ramona: morado #7b2ff7, magenta #ff2e9a, teal #00e5c7 y crema, en vez del rojo vino. Más animado: letras de WEBS rebotando una por una, damero morado/magenta moviéndose, Scott bailando al hover, corazones y destellos flotando, marquee más rápido, bocadillo con frases rotando, parallax con el mouse y reveal al hacer scroll.
+Estilo actual (2026-11-17 18:32): profesional como NewApe (newape.com.mx/diseno-web.html): héroe "Tu página web, diseñada para vender", servicios, "Tu turno", "Un motor de ventas, no solo una página", paquetes con precios claros, cómo trabaja el agente, preguntas frecuentes y CTA final. Solo estructura/estilo, con nuestros precios y textos, sin copiar su marca ni inventar reseñas o proyectos. Scott y Ramona en pixel art se quedan discretos en el héroe, animados.
 
 ## Planes (MXN)
 
