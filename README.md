@@ -2,7 +2,7 @@
 
 Web de **Webs Esteban González** — páginas web para negocios con agente IA en WhatsApp.
 
-Estilo actual (2026-11-17 17:53): inspirado en la web FINO de Magui.dev (reel Ddp3tEbJz01, "webs con aura"): héroe crema con título gigante condensado, sticker amarillo, bocadillo, damero morado, tarjeta de menú con los planes como lista con precios a la derecha, y Scott y Ramona en pixel art (scott-pixel.webp, el avatar actual de Esteban) como personaje, con corazones pixel morado/teal. Solo estructura/estilo, sin copiar la marca FINO ni sus productos.
+Estilo actual (2026-11-17 18:20): profesional y limpio — fondo blanco, azul marino + teal, tipografía Inter, tarjetas claras, sin damero ni stickers. Scott y Ramona en pixel art (scott-pixel.webp) se quedan como personaje del héroe, ahora animados: flotan, se balancean, saltan al pasar el mouse, les suben corazones pixel y el bocadillo cambia de frase cada 3 segundos, más un chat animado del agente y parallax suave con el mouse.
 
 ## Planes (MXN)
 
