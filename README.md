@@ -2,7 +2,7 @@
 
 Web de **Webs Esteban González** — páginas web para negocios con agente IA en WhatsApp.
 
-Estilo actual (2026-11-17 18:20): profesional y limpio — fondo blanco, azul marino + teal, tipografía Inter, tarjetas claras, sin damero ni stickers. Scott y Ramona en pixel art (scott-pixel.webp) se quedan como personaje del héroe, ahora animados: flotan, se balancean, saltan al pasar el mouse, les suben corazones pixel y el bocadillo cambia de frase cada 3 segundos, más un chat animado del agente y parallax suave con el mouse.
+Estilo actual (2026-11-17 18:24): se volvió al estilo FINO animado, pero con mejores colores sacados de la imagen de Scott y Ramona: morado #7b2ff7, magenta #ff2e9a, teal #00e5c7 y crema, en vez del rojo vino. Más animado: letras de WEBS rebotando una por una, damero morado/magenta moviéndose, Scott bailando al hover, corazones y destellos flotando, marquee más rápido, bocadillo con frases rotando, parallax con el mouse y reveal al hacer scroll.
 
 ## Planes (MXN)
 
