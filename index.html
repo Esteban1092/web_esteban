@@ -49,7 +49,7 @@
         <img src="scott-riendo.jpg" alt="Scott riéndose" width="720" height="720" class="scott-face" data-gesture="😂 Scott riéndose: el agente vende por ti">
         <img src="scott-paz.jpg" alt="Scott haciendo la paz" width="720" height="720" class="scott-face" data-gesture="✌️ Scott en paz: ya estás vendiendo">
       </div>
-      <p class="gesture" id="gestureText">😰 Scott nervioso: tu negocio sin web</p>
+      <p class="gesture" id="gestureText" aria-live="polite">😰 Scott nervioso: tu negocio sin web</p>
     </div>
   </div>
   <div class="marquee"><span>DISEÑO WEB · AGENTE IA · WHATSAPP 24/7 · CÓDIGO PURO · SEO ·&nbsp;</span><span>DISEÑO WEB · AGENTE IA · WHATSAPP 24/7 · CÓDIGO PURO · SEO ·&nbsp;</span></div>
@@ -148,15 +148,65 @@
 <a class="sticky-cta" href="https://wa.me/525529476336?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio">Pedir mi web</a>
 <script>
 const phrases=[["¿Tu negocio sin web?","😰 Scott nervioso: tu negocio sin web"],["Yo atiendo por ti, 24/7.","😂 Scott riéndose: el agente vende por ti"],["Agenda, responde y vende.","✌️ Scott en paz: ya estás vendiendo"]];
+const moves=["shake","laugh","peace"];
 let pi=0; const bt=document.getElementById("bubbleText"), gt=document.getElementById("gestureText");
 const faces=document.querySelectorAll(".scott-face");
-const moves=["shake","laugh","peace"];
-setInterval(()=>{ pi=(pi+1)%phrases.length; bt.style.opacity=0; gt.style.opacity=0;
-  setTimeout(()=>{ bt.textContent=phrases[pi][0]; gt.textContent=phrases[pi][1]; bt.style.opacity=1; gt.style.opacity=1; },300);
+const stage=document.getElementById("scottStage");
+const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function showFace(n){
+  pi=(pi+n+phrases.length)%phrases.length;
+  bt.style.opacity=0; gt.style.opacity=0;
+  setTimeout(()=>{ bt.textContent=phrases[pi][0]; gt.textContent=phrases[pi][1]; bt.style.opacity=1; gt.style.opacity=1; },200);
   faces.forEach((f,i)=>{ f.classList.toggle("active", i===pi); f.classList.remove("shake","laugh","peace"); });
   faces[pi].classList.add(moves[pi]);
-},3000);
-document.querySelector(".hero").addEventListener("mousemove",e=>{ const r=e.currentTarget.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; document.getElementById("heroArt").style.transform="translate("+(x*8)+"px,"+(y*6)+"px)"; });
+}
+setInterval(()=>showFace(1),3000);
+/* Parallax (apple-design + gestures): track 1:1 con rAF + lerp — sin
+   transition en CSS, escritura directa de transform, solo con puntero
+   fino y sin reduced-motion. */
+const finePointer=window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+if(finePointer && !reduceMotion){
+  const art=document.getElementById("heroArt");
+  let tx=0, ty=0, cx=0, cy=0, raf=null;
+  document.querySelector(".hero").addEventListener("pointermove",e=>{
+    const r=e.currentTarget.getBoundingClientRect();
+    tx=((e.clientX-r.left)/r.width-.5)*8; ty=((e.clientY-r.top)/r.height-.5)*6;
+    if(!raf) raf=requestAnimationFrame(tick);
+  });
+  function tick(){
+    cx+=(tx-cx)*.12; cy+=(ty-cy)*.12;
+    art.style.transform="translate("+cx.toFixed(2)+"px,"+cy.toFixed(2)+"px)";
+    if(Math.abs(tx-cx)>.05||Math.abs(ty-cy)>.05){ raf=requestAnimationFrame(tick); }
+    else { raf=null; }
+  }
+}
+/* Swipe en Scott (gestures): track 1:1 con rubber-band (0.2 pasado el
+   límite), release por distancia (>60px) O velocidad (>0.5 px/ms).
+   Snap-back rápido 200ms ease-out si no pasa el umbral. */
+let drag=null;
+stage.addEventListener("pointerdown",e=>{
+  stage.setPointerCapture(e.pointerId);
+  drag={x0:e.clientX,t0:performance.now(),dx:0};
+  stage.classList.add("dragging");
+});
+stage.addEventListener("pointermove",e=>{
+  if(!drag) return;
+  let dx=e.clientX-drag.x0;
+  if(Math.abs(dx)>120) dx=Math.sign(dx)*(120+(Math.abs(dx)-120)*.2); /* rubber-band */
+  drag.dx=dx;
+  stage.style.transform="translateX("+dx+"px)";
+});
+function endDrag(e){
+  if(!drag) return;
+  const dt=Math.max(1,performance.now()-drag.t0);
+  const v=Math.abs(drag.dx)/dt;
+  stage.classList.remove("dragging");
+  stage.style.transform="";
+  if(Math.abs(drag.dx)>60||v>.5) showFace(drag.dx<0?1:-1);
+  drag=null;
+}
+stage.addEventListener("pointerup",endDrag);
+stage.addEventListener("pointercancel",endDrag);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 </script>
