@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 <header class="top">
@@ -207,8 +208,18 @@ function endDrag(e){
 }
 stage.addEventListener("pointerup",endDrag);
 stage.addEventListener("pointercancel",endDrag);
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+/* Reveal con seguro: si el observer no existe o no dispara (ahí se quedó
+   la sección de planes en blanco en el cel de Esteban), todo se revela.
+   El timeout de 2s es el último seguro: mejor que se vea sin animación
+   a que se quede en blanco. */
+const reveals=document.querySelectorAll(".reveal");
+if(!("IntersectionObserver" in window)){
+  reveals.forEach(el=>el.classList.add("in"));
+}else{
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+  reveals.forEach(el=>io.observe(el));
+  setTimeout(()=>reveals.forEach(el=>el.classList.add("in")),2000);
+}
 </script>
 </body>
 </html>
